@@ -1,10 +1,10 @@
 site_name: Notas musicais 
 repo_url:  https://github.com/Mth-Amorim/notas-musicais
 repo_name: mth-amorim/notas-musicais
-edit_url: tree/main/docs
+edit_uri: tree/main/docs
 
 theme:
-  name: material 
+  name: material
   language: pt-BR
   logo: assets/icone_site-1.ico
   favicon: assets/icone_site-1.ico
@@ -14,3 +14,9 @@ markdown_extensions:
 
 extra_css:
   - stylesheets/extra.css
+
+plugins:
+- mkdocstrings:
+    handlers:
+      python:
+        paths: [notas_musicais]
