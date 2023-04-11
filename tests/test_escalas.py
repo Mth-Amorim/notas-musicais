@@ -52,7 +52,7 @@ def teste_deve_retornar_as_notas_corretas(tonica, esperado):
     assert resultado['notas'] == esperado
 
 
-def test_deve_retornar_os_ete_graus():
+def test_deve_retornar_os_sete_graus():
     tonica = 'c'
     tonalidade = 'maior'
     esperado = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']
