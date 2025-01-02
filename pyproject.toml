@@ -6,8 +6,24 @@ authors = ["Your Name <you@example.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.13"
+python = "^3.12"
 
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.4"
+pytest-cov = "^6.0.0"
+
+
+[tool.poetry.group.dev.dependencies]
+blue = "^0.9.1"
+isort = "^5.13.2"
+taskipy = "^1.14.1"
+
+
+[tool.poetry.group.docs.dependencies]
+mkdocs-material = "^9.5.49"
+mkdocstrings = "^0.27.0"
+mkdocstrings-python = "^1.13.0"
 
 [build-system]
 requires = ["poetry-core"]
