@@ -27,7 +27,7 @@ mkdocstrings-python = "^1.13.0"
 
 [tool.taskipy.tasks]
 doc = "mkdocs serve"
-pre_git = "git status"
+pre_git = "git status && git add ."
 git = "git commit -a -m"
 post_git = "git push"
 

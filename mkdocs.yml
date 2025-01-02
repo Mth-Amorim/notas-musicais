@@ -1,0 +1,16 @@
+site_name: My Docs
+repo_url: https://github.com/Mth-Amorim/notas-musicais
+repo_name: Mth-Amorim/notas-musicais
+edit_uri: tree/main/docs
+
+theme:
+  name: material
+  language: pt-br
+  logo: assets/logo.png
+  favicon: assets/logo.ico
+
+markdown_extensions:
+  - attr_list
+
+extra_css :
+  - stylesheets/extra.css
