@@ -25,6 +25,12 @@ mkdocs-material = "^9.5.49"
 mkdocstrings = "^0.27.0"
 mkdocstrings-python = "^1.13.0"
 
+[tool.taskipy.tasks]
+doc = "mkdocs serve"
+pre_git = "git status"
+git = "git commit -a -m"
+post_git = "git push"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
