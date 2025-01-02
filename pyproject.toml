@@ -25,8 +25,24 @@ mkdocs-material = "^9.5.49"
 mkdocstrings = "^0.27.0"
 mkdocstrings-python = "^1.13.0"
 
+[tool.pytest.ini_options]
+pythonpath = "."
+addopts = "--doctest-modules"
+
+
+[tool.blue]
+line_length = 120 
+
+[tool.isort]
+profile = "black"
+line_length = 120 
+
 [tool.taskipy.tasks]
+lint = "blue . && isort ."
 doc = "mkdocs serve"
+pre_test = "task lint"
+test = "pytest -s -x --cov=notas_musicais -VV"
+post_test = "coverage html"
 pre_git = "git status && git add ."
 git = "git commit -a -m"
 post_git = "git push"
