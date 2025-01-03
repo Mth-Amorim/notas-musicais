@@ -41,7 +41,7 @@ line_length = 120
 lint = "blue . && isort ."
 doc = "mkdocs serve"
 pre_test = "task lint"
-test = "pytest -s -x --cov=notas_musicais -VV"
+test = "pytest -s -x --cov=notas_musicais -vv"
 post_test = "coverage html"
 pre_git = "git status && git add ."
 git = "git commit -a -m"
