@@ -1,3 +1,5 @@
+import re
+
 from pytest import mark, raises
 
 from notas_musicais.escalas import ESCALAS, NOTAS, escala
@@ -14,28 +16,24 @@ def test_escala_deve_funcionar_com_notas_minusculas():
     assert result
 
 
-def test_deve_retornar_um_erro_quando_a_nota_nao_exist():
-    # Arrumar
-    tonica = 'z'
+def test_deve_retornar_um_erro_dizendo_que_a_nota_nao_existe():
+    tonica = 'X'
     tonalidade = 'maior'
-    menssaem_esperada = f'Essa nota não existe, tente uma dessas {NOTAS}'
 
-    # act
-    result = escala(tonica, tonalidade)
+    mensagem_de_erro = f'Essa nota não existe, tente uma dessas {NOTAS}'
 
-    assert result == f'Essa nota não existe, tente uma dessas {NOTAS}'
+    with raises(ValueError, match=re.escape(mensagem_de_erro)):
+        escala(tonica, tonalidade)
 
 
-def test_deve_retornar_um_erro_quando_a_escala_nao_exist():
-    # Arrumar
-    tonica = 'C'
-    tonalidade = 'jujubinha'
-    menssaem_esperada = f'Essa escala não existe, tente uma dessas {ESCALAS}'
+def test_deve_retornar_um_erro_dizendo_que_a_escala_não_existe():
+    tonica = 'c'
+    tonalidade = 'tonalidade'
 
-    # act
-    result = escala(tonica, tonalidade)
+    mensagem_de_erro = f'Essa escala não existe ou não foi implementada. Tente uma dessas {list(ESCALAS.keys())}'
 
-    assert result == f'Essa escala não existe, tente uma dessas {ESCALAS}'
+    with raises(KeyError, match=re.escape(mensagem_de_erro)):
+        escala(tonica, tonalidade)
 
 
 @mark.parametrize(
