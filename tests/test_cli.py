@@ -6,18 +6,18 @@ from notas_musicais.cli import app
 runner = CliRunner()
 
 
-def test_escala_cls_deve_retornar_0_ao_stdout():
-    result = runner.invoke(app)
+def test_escala_cli_deve_retornar_0_ao_stdout():
+    result = runner.invoke(app, ['escala'])
     assert result.exit_code == 0
 
 
 @mark.parametrize('nota', ['C', 'D', 'E', 'F', 'G', 'A', 'B'])
-def test_cli_deve_conter_as_notas_na_resposta(nota):
-    result = runner.invoke(app)
+def test_escala_cli_deve_conter_as_notas_na_resposta(nota):
+    result = runner.invoke(app, ['escala'])
     assert nota in result.stdout
 
 
 @mark.parametrize('nota', ['F', 'G', 'A', 'A#', 'C', 'D', 'E'])
 def test_escala_cli_deve_conter_as_notas_na_resposta_de_fa(nota):
-    result = runner.invoke(app, ['F'])
+    result = runner.invoke(app, ['escala', 'F'])
     assert nota in result.stdout
