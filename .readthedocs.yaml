@@ -14,3 +14,4 @@ build:
       - pip install poetry
       - poetry env use $READTHEDOCS_VIRTUALENV_PATH/bin/python
       - poetry env info
+      - poetry install --only docs
