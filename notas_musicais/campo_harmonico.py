@@ -1,3 +1,4 @@
+"""Módulo responsável pela criação de campos harmônicos."""
 from notas_musicais.acordes import triade
 from notas_musicais.escalas import escala
 
@@ -70,6 +71,8 @@ def campo_harmonico(tonica: str, tonalidade: str) -> dict[str, list[str]]:
     """
     notas, _graus = escala(tonica, tonalidade).values()
     acordes = [_triade_na_escala(nota, notas) for nota in notas]
-    graus = [_converte_graus(acorde, grau) for acorde, grau in zip(acordes, _graus)]
+    graus = [
+        _converte_graus(acorde, grau) for acorde, grau in zip(acordes, _graus)
+    ]
 
     return {'acordes': acordes, 'graus': graus}

@@ -8,4 +8,4 @@ São tarefas que sabemos que precisam ser feitas para melhorias gerais do sistem
 - [ ] Implementar tétrades (notas com mais de 3 acordes):  [referência](https://pt.wikipedia.org/wiki/T%C3%A9trade)
 - [ ] Implementar Funções harmônicas (tonica, dominante, subdominante e relativos): [referência](https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_(m%C3%BAsica))
 
-Para tarefas não mapeadas aqui, você pode consultar as [issues do projeto](ht
+Para tarefas não mapeadas aqui, você pode consultar as [issues do projeto](https://github.com/dunossauro/notas-musicais/issues)

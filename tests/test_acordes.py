@@ -2,6 +2,17 @@ from pytest import mark
 
 from notas_musicais.acordes import acorde
 
+"""
+Entrada
+acorde Cm
+
+Esperado:
+I - III - V
+C    E    G
+
+{'notas': ['C', 'E', 'G'], 'graus': ['I', 'III', 'V']}
+"""
+
 
 @mark.parametrize(
     'nota,esperado',
@@ -20,8 +31,17 @@ def test_acorde_deve_retornar_as_notas_correspondentes(nota, esperado):
     assert esperado == notas
 
 
-def test_acorde_deve_retornar_os_Graus_correspondentes():
-    nota = 'C'
-    esperado = ['I', 'III', 'V']
-    _, graus = acorde(nota).values()
-    assert graus == esperado
+@mark.parametrize(
+    'cifra,esperado',
+    [
+        ('C', ['I', 'III', 'V']),
+        ('Cm', ['I', 'III-', 'V']),
+        ('C°', ['I', 'III-', 'V-']),
+        ('C+', ['I', 'III', 'V+']),
+        ('Cm+', ['I', 'III-', 'V+']),
+    ],
+)
+def test_acorde_deve_retornar_os_graus_correspondentes(cifra, esperado):
+    _, graus = acorde(cifra).values()
+
+    assert esperado == graus

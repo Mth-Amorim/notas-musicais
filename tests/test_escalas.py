@@ -1,3 +1,9 @@
+"""
+AAA - 3A - A3
+
+Arange - Act - Assets!
+Arrumar - Agir - Garantir!
+"""
 import re
 
 from pytest import mark, raises
@@ -5,14 +11,15 @@ from pytest import mark, raises
 from notas_musicais.escalas import ESCALAS, NOTAS, escala
 
 
-def test_escala_deve_funcionar_com_notas_minusculas():
+def test_deve_funcionar_com_notas_minusculas():
     # Arrumar
     tonica = 'c'
     tonalidade = 'maior'
 
-    # act
+    # Act - Chamo o que testar
     result = escala(tonica, tonalidade)
 
+    # Assert
     assert result
 
 
@@ -30,7 +37,10 @@ def test_deve_retornar_um_erro_dizendo_que_a_escala_não_existe():
     tonica = 'c'
     tonalidade = 'tonalidade'
 
-    mensagem_de_erro = f'Essa escala não existe ou não foi implementada. Tente uma dessas {list(ESCALAS.keys())}'
+    mensagem_de_erro = (
+        'Essa escala não existe ou não foi implementada. '
+        f'Tente uma dessas {list(ESCALAS.keys())}'
+    )
 
     with raises(KeyError, match=re.escape(mensagem_de_erro)):
         escala(tonica, tonalidade)
@@ -61,5 +71,11 @@ def test_deve_retornar_as_notas_corretas(tonica, tonalidade, esperado):
     assert resultado['notas'] == esperado
 
 
-def test_deve_garantir_os_graus_funcionam():
-    assert escala('c', 'maior')['graus'] == ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']
+def test_deve_retornar_os_sete_graus():
+    tonica = 'c'
+    tonalidade = 'maior'
+    esperado = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']
+
+    resultado = escala(tonica, tonalidade)
+
+    assert resultado['graus'] == esperado

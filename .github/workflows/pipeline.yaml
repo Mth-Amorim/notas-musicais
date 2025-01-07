@@ -12,13 +12,13 @@ jobs:
       - name: Instalar o python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.12.1'
+          python-version: '3.11.1'
 
       - name: Instalar Poetry
         run: pip install poetry
 
       - name: Instalar dependências do projeto
-        run: poetry install --without docs
+        run: poetry install --without doc
 
       - name: Rodar os testes
         run: poetry run task test --cov-report=xml
