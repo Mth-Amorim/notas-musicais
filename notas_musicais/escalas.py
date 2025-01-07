@@ -69,7 +69,9 @@ def escala(tonica: str, tonalidade: str) -> dict[str, list[str]]:
     except KeyError:
         raise KeyError('Essa escala não existe ou não foi implementada. ' f'Tente uma dessas {list(ESCALAS.keys())}')
 
+
     temp = []
+
 
     for intervalo in intervalos:
         nota = (tonica_pos + intervalo) % 12
