@@ -16,3 +16,14 @@ jobs:
 
       - name: Instalar Poetry
         run: pip install poetry
+
+      - name: Instalar dependências do projeto
+        run: poetry install --without docs
+
+      - name: Rodar os testes
+        run: poetry run task test --cov-report=xml
+
+      - name: Subir cobertura para o codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
