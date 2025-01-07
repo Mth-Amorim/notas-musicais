@@ -12,5 +12,4 @@ build:
       post_create_environment:
         - pip install poetry==2.0  # Instala o Poetry 2.0
         - poetry config virtualenvs.create false  # Desativa a criação de ambientes virtuais pelo Poetry      
-        - poetry env use $READTHEDOCS_VIRTUALENV_PATH 
-        - poetry install --only doc  # Instala as dependências diretamente do pyproject.toml
+        - poetry install --only doc  # Instala as dependências di
