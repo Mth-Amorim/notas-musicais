@@ -15,4 +15,4 @@ build:
 
     post_install:
       - poetry install --only docs
-      - poetry shell
+      - pshell
