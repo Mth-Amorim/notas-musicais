@@ -12,6 +12,5 @@ build:
     post_create_environment:
       - echo $READTHEDOCS_VIRTUALENV_PATH
       - pip install poetry
-      - poetry config virtualenvs.create false
-      - poetry env info 
-      - ls $READTHEDOCS_VIRTUALENV_PATH
+      - poetry env use $READTHEDOCS_VIRTUALENV_PATH/bin/python
+      - poetry env info
