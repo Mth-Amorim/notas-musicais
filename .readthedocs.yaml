@@ -6,7 +6,7 @@ mkdocs:
 build:
   os: "ubuntu-22.04"
   tools:
-    python: "3.11"
+    python: "3.12"
 
   jobs:
     post_create_environment:
@@ -14,4 +14,4 @@ build:
       - poetry config virtualenvs.create false
 
     post_install:
-      - poetry install --only doc
+      - poetry install --only docs

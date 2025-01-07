@@ -12,6 +12,7 @@ theme:
 markdown_extensions:
   - attr_list
   - admonition
+<<<<<<< HEAD
   - pymdownx.tasklist
   - pymdownx.superfences:
       custom_fences:
@@ -21,6 +22,10 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+=======
+
+
+>>>>>>> parent of f12a8ed (Copiando dunossauro para  ver se readthedocs le)
 
 extra_css:
   - stylesheets/extra.css
