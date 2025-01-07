@@ -9,7 +9,9 @@ build:
     python: "3.12"
 
   jobs:
-      post_create_environment:
+      pre_create_environment:
         - pip install poetry  # Instala o Poetry 2.0
         - poetry config virtualenvs.create false  # Desativa a criação de ambientes virtuais pelo Poetry      
+      post_create_environment:
+        - poetry env use $READTHEDOCS_VIRTUALENV_PATH
         - poetry install --only docs  # Instala as dependências di
