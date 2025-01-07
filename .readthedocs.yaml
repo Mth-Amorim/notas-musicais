@@ -13,3 +13,4 @@ build:
         - pip install poetry==2.0  # Instala o Poetry 2.0
         - poetry config virtualenvs.create false  # Desativa a criação de ambientes virtuais pelo Poetry        
         - poetry install  # Instala as dependências diretamente do pyproject.toml
+        - poetry env info
