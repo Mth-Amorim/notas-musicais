@@ -9,11 +9,11 @@ build:
     python: "3.12"
 
 
-jobs:
-    pre_build:
-      - pip install poetry==2.0  # Instala o Poetry 2.0
-      - poetry install  # Instala as dependências diretamente do pyproject.toml
-      - poetry config virtualenvs.create false  # Desativa a criação de ambientes virtuais pelo Poetry
+  jobs:
+      pre_build:
+        - pip install poetry==2.0  # Instala o Poetry 2.0
+        - poetry install  # Instala as dependências diretamente do pyproject.toml
+        - poetry config virtualenvs.create false  # Desativa a criação de ambientes virtuais pelo Poetry
 
-    post_create_environment:
-      - poetry install  # Instala novamente as dependências caso necessário
+      post_create_environment:
+        - poetry install  # Instala novamente as dependências caso necessário
