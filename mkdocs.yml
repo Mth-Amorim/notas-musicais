@@ -1,4 +1,4 @@
-site_name: My Docs
+site_name: Notas musicais
 repo_url: https://github.com/Mth-Amorim/notas-musicais
 repo_name: Mth-Amorim/notas-musicais
 edit_uri: tree/main/docs
@@ -20,7 +20,12 @@ watch:
 
 
 plugins:
+- macros
 - mkdocstrings:
     handlers:
-      python: 
+      python:
         paths: [notas_musicais]
+
+extra:
+  commands:
+    run: notas-musicais
