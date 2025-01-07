@@ -14,4 +14,4 @@ build:
       - pip install poetry
       - poetry config virtualenvs.create false
       - poetry env info 
-      - echo $READTHEDOCS_VIRTUALENV_PATH
+      - ls $READTHEDOCS_VIRTUALENV_PATH
